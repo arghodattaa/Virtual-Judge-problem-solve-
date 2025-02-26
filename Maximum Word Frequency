@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+    int n; cin>>n ;
+    map< string , int>mp;
+    string s;
+    string ans_s; int  ans_n=0;
+    while(n--){
+        cin>>s;
+        mp[s] ++;
+        if( mp[s]>ans_n ){
+            ans_n = mp[s];
+            ans_s = s;
+        }else if( mp[s] == ans_n){
+            if( s> ans_s){
+                ans_s = s;
+            }
+        }
+    }
+    cout<<ans_s<<" "<<ans_n;
+}
